@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Checkbox, notification } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import axiosInstance from '../../Configs/axiosConfig'; // Importe sua instância do Axios
+import axiosInstance from '../../configs/axiosConfig'; 
 import { useNavigate } from 'react-router-dom';
 
 interface FieldType {
@@ -39,7 +39,7 @@ const Login: React.FC = () => {
                 description: 'Você foi autenticado com sucesso.',
             });
 
-            navigate('/Home');
+            navigate('/dashbord');
 
         } catch (error: unknown) {
             console.error('Login failed:', error);
@@ -56,10 +56,9 @@ const Login: React.FC = () => {
 
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <Form
                 name='basic'
-                style={{ maxWidth: 400, background: 'white', padding: 20 }}
+                style={{ maxWidth: 500, maxHeight: 400, background: 'white', padding: 20, justifyContent: 'center', alignSelf: 'center', borderRadius: 5, margin: 'auto' }}
                 initialValues={{ remember: true }}
                 onFinish={onFinish}
                 autoComplete='off'
@@ -95,7 +94,6 @@ const Login: React.FC = () => {
                     </Button>
                 </Form.Item>
             </Form>
-        </div>
     );
 };
 
