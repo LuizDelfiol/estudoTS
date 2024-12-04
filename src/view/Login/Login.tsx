@@ -20,7 +20,7 @@ const Login: React.FC = () => {
         setLoading(true);
 
         try {
-            const response = await axiosInstance.post('/login', {
+            const response = await axiosInstance.post('/', {
                 email,
                 password,
             });
